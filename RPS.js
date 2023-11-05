@@ -21,6 +21,8 @@ const getComputerChoice = () => {
         return 'paper';
         case 2: 
         return 'scissors';
+        case 3: 
+        return 'bomb';
     }
 };
 
@@ -44,11 +46,11 @@ const determineWinner = (getUserChoice, getComputerChoice) => {
     }
     if (getUserChoice === 'scissors') { 
         if (getComputerChoice === 'paper')
-        return 'The computer won this round!';
-    } else { 
         return 'You won this round!';
+    } else { 
+        return 'The computer won this round!';
     }
-    if (getUserChoie === 'bomb') { 
+    if (getUserChoice === 'bomb') { 
         return 'You win! Bomb explodes all!'
     }
 
@@ -56,7 +58,7 @@ const determineWinner = (getUserChoice, getComputerChoice) => {
 
 // Now to Play Game...
 const playGame = () => { 
-    const userChoice = getUserChoice('paper'); 
+    const userChoice = getUserChoice('Rock'); 
     const computerChoice = getComputerChoice();
     console.log(`You shot ${userChoice}`); 
     console.log(`The computer shot ${computerChoice}`);
